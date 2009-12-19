@@ -1,0 +1,38 @@
+MongoDbLoggerExtensions
+=======================
+
+Usefull examples extending logs information
+
+require mongo_db_logger installed and configured
+
+Example
+=======
+
+== Memory Usage - works only in *nix systems
+
+Add to ApplicationController
+
+include MongoDbLogger::MemoryUsage
+
+two paremeters would be added to your logs
+
+'pid'               : 12568
+'memory_usage'      : 57
+
+== Active Record Instance Counter
+
+Add to ApplicationController
+
+include MongoDbLogger::InstanceCounter
+
+dictionary with all type of objects would be looks familiar to
+
+'instance_coutner'  : {
+                        'Total'     : 13,
+                        'User'      : 6,
+                        'Post'      : 7
+                    }
+
+
+
+Copyright (c) 2009 [CS3B Michał Czyż], released under the MIT license
