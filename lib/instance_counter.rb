@@ -28,7 +28,7 @@ module MongoDbLogger
 
     def report_instance_type_count
       report_hash = ActiveRecord::Base.instantiated_hash.merge("Total" => ActiveRecord::Base.total_objects_instantiated)
-      Rails.add_metadata(:instance_counter => report_hash)
+      Rails.logger.add_metadata(:instance_counter => report_hash)
       ActiveRecord::Base.reset_instance_type_count
     end
 
